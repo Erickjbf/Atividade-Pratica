@@ -1,23 +1,36 @@
 const soma = () => {
-    console.log(parseInt(args[0]) + parseInt(args[1]));
+    const num1 = parseInt(args[1]);
+    const num2 = parseInt(args[2]);
+    if (!isNaN(num1) && !isNaN(num2)) {
+        console.log(num1 + num2);
+    } else {
+        console.log('Os argumentos não são números válidos.');
+    }
 };
+
 const sub = () => {
-    console.log(parseInt(args[0]) - parseInt(args[1]));
-}
+    const num1 = parseInt(args[1]);
+    const num2 = parseInt(args[2]);
+    if (!isNaN(num1) && !isNaN(num2)) {
+        console.log(num1 - num2);
+    } else {
+        console.log('Os argumentos não são números válidos.');
+    }
+};
+
 const args = process.argv.slice(2);
-    
+
 switch (args[0]) {
-    
     case 'soma':
         soma();
-    break;
+        break;
         
     case 'sub':
         sub();
-    break;
+        break;
         
     default:
-        console.log('does not support', args[0]);
+        console.log('Operação não suportada:', args[0]);
 }
 
         
